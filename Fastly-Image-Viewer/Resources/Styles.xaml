@@ -5,7 +5,7 @@
     <Style x:Key="NativeButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="#7F000000"/>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderBrush" Value="#BF000000"/>
+        <Setter Property="BorderBrush" Value="#BF191919"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
