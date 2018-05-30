@@ -12,6 +12,26 @@
         AllowsTransparency="True"
         Background="#7F000000">
     <Grid>
-        
+        <Button
+            Style="{StaticResource NativeButtonStyle}"
+            Width="60" Height="40"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="30"
+            FontSize="16"
+            Content="OPEN"/>
+        <Button 
+            x:Name="closeBtn"
+            Style="{StaticResource NativeButtonStyle}"
+            Width="40" Height="40"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="30">
+            <Path
+                Fill="White"
+                Width="16" Height="16"
+                Data="{StaticResource IconClose}"
+                Stretch="Fill"/>
+        </Button>
     </Grid>
 </Window>

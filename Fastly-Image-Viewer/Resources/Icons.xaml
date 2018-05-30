@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Fastly_Image_Viewer.Resources">
+    <PathGeometry x:Key="IconClose">
+        M6.998 0L0.005 6.997 105.263 112.254 0.005 217.512l6.993 7 105.258 -105.272 105.265 105.272 6.986 -7L119.249 112.254 224.507 6.997 217.521 0 112.256 105.258Z
+    </PathGeometry>
+</ResourceDictionary>
