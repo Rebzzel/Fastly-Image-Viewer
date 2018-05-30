@@ -40,6 +40,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="30"
+            FontFamily="Segoe UI Light"
             FontSize="16"
             Content="OPEN"/>
         <Grid
@@ -52,10 +53,45 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top">
                 <Path
-                    Fill="White"
+                    Fill="#FFF5F5F5"
                     Width="16" Height="16"
                     Data="{StaticResource IconClose}"
                     Stretch="Fill"/>
+            </Button>
+            <Button
+                x:Name="zoomInBtn"
+                Style="{StaticResource NativeButtonStyle}"
+                Width="40" Height="40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,0,0,90">
+                <Path
+                    Fill="#FFF5F5F5"
+                    Width="20" Height="20"
+                    Data="{StaticResource IconZoomPlus}"
+                    Stretch="Fill"
+                    RenderOptions.ClearTypeHint="Enabled"/>
+            </Button>
+            <Button
+                x:Name="zoomReloadBtn"
+                Style="{StaticResource NativeButtonStyle}"
+                Width="40" Height="40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            </Button>
+            <Button
+                x:Name="zoomOutBtn"
+                Style="{StaticResource NativeButtonStyle}"
+                Width="40" Height="40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,90,0,0">
+                <Path
+                    Fill="#FFF5F5F5"
+                    Width="20" Height="20"
+                    Data="{StaticResource IconZoomMinus}"
+                    Stretch="Fill"
+                    SnapsToDevicePixels="True"/>
             </Button>
             <Button 
                 x:Name="settingsBtn"
@@ -65,8 +101,8 @@
                 VerticalAlignment="Bottom"
                 Margin="0,0,0,45">
                 <Path
-                    Fill="White"
-                    Width="20" Height="20"
+                    Fill="#FFF5F5F5"
+                    Width="22" Height="22"
                     Data="{StaticResource IconSettings}"
                     Stretch="Fill"/>
             </Button>
@@ -75,14 +111,25 @@
                 Style="{StaticResource NativeButtonStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
-                VerticalAlignment="Bottom"
-                ToolTip="">
+                VerticalAlignment="Bottom">
                 <Path
-                    Fill="White"
-                    Width="18" Height="18"
+                    Fill="#FFF5F5F5"
+                    Width="22" Height="22"
                     Data="{StaticResource IconInfo}"
                     Stretch="Fill"/>
             </Button>
+        </Grid>
+        <Grid
+            Width="300" Height="300"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Label
+                Foreground="#FFF5F5F5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontFamily="Segoe UI Light"
+                FontSize="18"
+                Content="NO IMAGE CONTENT"/>
         </Grid>
     </Grid>
 </Window>
