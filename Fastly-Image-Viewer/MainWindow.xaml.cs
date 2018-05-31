@@ -21,5 +21,40 @@ namespace Fastly_Image_Viewer
         {
             InitializeComponent();
         }
+
+        private void openBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zoomInBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zoomReloadBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zoomOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void settingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void infoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new InfoWindow().Show();
+        }
     }
 }
