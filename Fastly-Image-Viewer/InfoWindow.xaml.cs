@@ -25,5 +25,10 @@ namespace Fastly_Image_Viewer
         {
             Close();
         }
+
+        private void githubLbl_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Rebzzel/Fastly-Image-Viewer");
+        }
     }
 }
