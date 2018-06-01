@@ -62,6 +62,19 @@
                     Stretch="Fill"/>
             </Button>
             <Button
+                x:Name="colorPickerBtn"
+                Style="{StaticResource NativeButtonStyle}"
+                Width="40" Height="40"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,45,0,0">
+                <Path
+                    Fill="#FFF5F5F5"
+                    Width="16" Height="16"
+                    Data="{StaticResource IconColorPicker}"
+                    Stretch="Fill"/>
+            </Button>
+            <Button
                 x:Name="zoomInBtn"
                 Style="{StaticResource NativeButtonStyle}"
                 Width="40" Height="40"
