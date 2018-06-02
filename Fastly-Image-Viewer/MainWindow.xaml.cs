@@ -17,9 +17,21 @@ namespace Fastly_Image_Viewer
 {
     public partial class MainWindow : Window
     {
+        ColorPickerWindow PickerWindow;
+        InfoWindow InfoWindow;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            PickerWindow = new ColorPickerWindow();
+            InfoWindow = new InfoWindow();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            PickerWindow.Close();
+            InfoWindow.Close();
         }
 
         private void openBtn_Click(object sender, RoutedEventArgs e)
@@ -30,6 +42,11 @@ namespace Fastly_Image_Viewer
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void colorPickerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PickerWindow.Show();
         }
 
         private void zoomInBtn_Click(object sender, RoutedEventArgs e)
@@ -54,7 +71,7 @@ namespace Fastly_Image_Viewer
 
         private void infoBtn_Click(object sender, RoutedEventArgs e)
         {
-            new InfoWindow().Show();
+            InfoWindow.ShowDialog();
         }
     }
 }

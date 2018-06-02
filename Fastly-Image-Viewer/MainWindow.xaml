@@ -11,7 +11,8 @@
         WindowState="Maximized"
         Width="1024" Height="768"
         AllowsTransparency="True"
-        Background="#7F000000">
+        Background="#7F000000"
+        Closing="Window_Closing">
     <Window.Resources>
         <!-- ToolTip Style -->
         <Style TargetType="ToolTip">
@@ -67,7 +68,8 @@
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
-                Margin="0,45,0,0">
+                Margin="0,45,0,0" 
+                Click="colorPickerBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
                     Width="16" Height="16"
@@ -85,7 +87,8 @@
                 ToolTipService.InitialShowDelay="1000"
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
-                Click="zoomInBtn_Click" IsEnabled="False">
+                IsEnabled="False"
+                Click="zoomInBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
                     Width="20" Height="20"
@@ -102,7 +105,8 @@
                 ToolTipService.InitialShowDelay="1000"
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
-                Click="zoomReloadBtn_Click" IsEnabled="False">
+                IsEnabled="False"
+                Click="zoomReloadBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
                     Width="20" Height="20"
@@ -120,7 +124,8 @@
                 ToolTipService.InitialShowDelay="1000"
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
-                Click="zoomOutBtn_Click" IsEnabled="False">
+                IsEnabled="False"
+                Click="zoomOutBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
                     Width="20" Height="20"
