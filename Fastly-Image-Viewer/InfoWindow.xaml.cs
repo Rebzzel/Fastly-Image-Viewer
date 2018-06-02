@@ -23,7 +23,7 @@ namespace Fastly_Image_Viewer
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Hide();
         }
 
         private void githubLbl_Click(object sender, RoutedEventArgs e)
