@@ -23,7 +23,7 @@ namespace Fastly_Image_Viewer
 
         private void titleLbl_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            this.DragMove();
         }
 
         private void closeLbl_Click(object sender, RoutedEventArgs e)

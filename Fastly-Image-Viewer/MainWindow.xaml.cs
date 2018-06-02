@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +20,8 @@ namespace Fastly_Image_Viewer
 {
     public partial class MainWindow : Window
     {
+        Bitmap Bitmap;
+
         ColorPickerWindow PickerWindow;
         InfoWindow InfoWindow;
 
@@ -24,19 +29,56 @@ namespace Fastly_Image_Viewer
         {
             InitializeComponent();
 
-            PickerWindow = new ColorPickerWindow();
-            InfoWindow = new InfoWindow();
+            this.PickerWindow = new ColorPickerWindow();
+            this.InfoWindow = new InfoWindow();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            PickerWindow.Close();
-            InfoWindow.Close();
+            this.PickerWindow.Close();
+            this.InfoWindow.Close();
         }
 
         private void openBtn_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog dialog = new OpenFileDialog();
 
+            if (dialog.ShowDialog().Value)
+            {
+                this.grid.Visibility = Visibility.Hidden;
+
+                this.Bitmap = new Bitmap(dialog.FileName);
+                MemoryStream stream = new MemoryStream();
+                this.Bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                stream.Position = 0;
+
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = stream;
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+
+                this.image.Width = bitmapImage.Width;
+                this.image.Height = bitmapImage.Height;
+                this.image.Source = bitmapImage;
+
+                this.infoLbl.Visibility = Visibility.Visible;
+                this.infoLbl2.Content = $"{dialog.SafeFileName}\n{String.Format("{0:f2}", (double)new FileInfo(dialog.FileName).Length / 1024)} KB\n{Bitmap.Width} x {Bitmap.Height}";
+
+                this.saveAsBtn.IsEnabled = true;
+                this.zoomInBtn.IsEnabled = true;
+                this.zoomReloadBtn.IsEnabled = true;
+                this.zoomOutBtn.IsEnabled = true;
+            }  
+        }
+
+        private void saveAsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+
+            if (dialog.ShowDialog().Value)
+            {
+            }
         }
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
@@ -46,7 +88,7 @@ namespace Fastly_Image_Viewer
 
         private void colorPickerBtn_Click(object sender, RoutedEventArgs e)
         {
-            PickerWindow.Show();
+            this.PickerWindow.Show();
         }
 
         private void zoomInBtn_Click(object sender, RoutedEventArgs e)
@@ -71,7 +113,7 @@ namespace Fastly_Image_Viewer
 
         private void infoBtn_Click(object sender, RoutedEventArgs e)
         {
-            InfoWindow.ShowDialog();
+            this.InfoWindow.ShowDialog();
         }
     }
 }

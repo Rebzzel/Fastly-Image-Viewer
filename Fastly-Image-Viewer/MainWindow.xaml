@@ -6,7 +6,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fastly_Image_Viewer"
         mc:Ignorable="d"
-        Title="MainWindow"
         WindowStyle="None"
         WindowState="Maximized"
         Width="1024" Height="768"
@@ -34,10 +33,15 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid
+        x:Name="mainGrid">
+        <Image
+            x:Name="image"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
         <Button
             x:Name="openBtn"
-            Style="{StaticResource NativeButtonStyle}"
+            Style="{StaticResource NativeButtonWithShadowStyle}"
             Width="60" Height="40"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -46,12 +50,23 @@
             FontSize="16"
             Content="OPEN" 
             Click="openBtn_Click"/>
+        <Button
+            x:Name="saveAsBtn"
+            Style="{StaticResource NativeButtonWithShadowStyle}"
+            Width="70" Height="40"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="95, 30"
+            FontFamily="Segoe UI Light"
+            FontSize="16"
+            Content="SAVE AS" 
+            IsEnabled="False" Click="saveAsBtn_Click"/>
         <Grid
             HorizontalAlignment="Right"
             Margin="30">
             <Button 
                 x:Name="closeBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top" 
@@ -64,7 +79,7 @@
             </Button>
             <Button
                 x:Name="colorPickerBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
@@ -78,7 +93,7 @@
             </Button>
             <Button
                 x:Name="zoomInBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -97,7 +112,7 @@
             </Button>
             <Button
                 x:Name="zoomReloadBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" 
@@ -115,7 +130,7 @@
             </Button>
             <Button
                 x:Name="zoomOutBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -134,7 +149,7 @@
             </Button>
             <Button 
                 x:Name="settingsBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
@@ -152,7 +167,7 @@
             </Button>
             <Button
                 x:Name="infoBtn"
-                Style="{StaticResource NativeButtonStyle}"
+                Style="{StaticResource NativeButtonWithShadowStyle}"
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom" 
@@ -169,6 +184,7 @@
             </Button>
         </Grid>
         <Grid
+            x:Name="grid"
             Width="300" Height="300"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
@@ -188,7 +204,25 @@
                 Margin="0,60,0,0"
                 FontFamily="Segoe UI Semibold"
                 FontSize="18"
-                Text="OPEN"/>
+                Text="OPEN"
+                Click="openBtn_Click"/>
         </Grid>
+        <Label
+            x:Name="infoLbl"
+            Foreground="#FFBDBDBD"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Margin="30, 33"
+            FlowDirection="RightToLeft"
+            FontSize="14" 
+            Visibility="Hidden"
+            Content=":File name&#xA;:File size&#xA;:Size"/>
+        <Label
+            x:Name="infoLbl2"
+            Foreground="#FFCBCBCB"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Margin="100, 30"
+            FontSize="16"/>
     </Grid>
 </Window>

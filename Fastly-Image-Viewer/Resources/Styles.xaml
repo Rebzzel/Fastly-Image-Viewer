@@ -39,6 +39,46 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="NativeButtonWithShadowStyle" TargetType="Button">
+        <Setter Property="Background" Value="#7F000000"/>
+        <Setter Property="Foreground" Value="#FFF5F5F5"/>
+        <Setter Property="BorderBrush" Value="#BF191919"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Border>
+                        <Grid
+                            x:Name="visibilityGrid"
+                            Background="#7F000000"
+                            Visibility="Hidden"/>
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="13" ShadowDepth="0"/>
+                        </Grid.Effect>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="visibilityGrid" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#BF171717"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#BF212121"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!-- TextBlock Styles -->
     <Style x:Key="LinkTextBlock" TargetType="TextBlock">
         <Style.Triggers>
