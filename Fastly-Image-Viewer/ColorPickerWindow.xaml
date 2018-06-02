@@ -34,7 +34,9 @@
             Width="28" Height="24"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Padding="8,10,5,5" Click="closeLbl_Click">
+            Padding="8,10,5,5"
+            Cursor="Hand"
+            Click="closeLbl_Click">
             <Path
                 Fill="Gray"
                 Width="12" Height="2"

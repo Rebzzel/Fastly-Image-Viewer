@@ -48,7 +48,8 @@
             Margin="30"
             FontFamily="Segoe UI Light"
             FontSize="16"
-            Content="OPEN" 
+            Content="OPEN"
+            Cursor="Hand"
             Click="openBtn_Click"/>
         <Button
             x:Name="saveAsBtn"
@@ -59,8 +60,10 @@
             Margin="95, 30"
             FontFamily="Segoe UI Light"
             FontSize="16"
-            Content="SAVE AS" 
-            IsEnabled="False" Click="saveAsBtn_Click"/>
+            Content="SAVE AS"
+            IsEnabled="False"
+            Cursor="Hand"
+            Click="saveAsBtn_Click"/>
         <Grid
             HorizontalAlignment="Right"
             Margin="30">
@@ -70,6 +73,7 @@
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top" 
+                Cursor="Hand"
                 Click="closeBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -83,7 +87,8 @@
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
-                Margin="0,45,0,0" 
+                Margin="0,45,0,0"
+                Cursor="Hand"
                 Click="colorPickerBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -103,6 +108,7 @@
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
                 IsEnabled="False"
+                Cursor="Hand"
                 Click="zoomInBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -121,6 +127,7 @@
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
                 IsEnabled="False"
+                Cursor="Hand"
                 Click="zoomReloadBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -140,6 +147,7 @@
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
                 IsEnabled="False"
+                Cursor="Hand"
                 Click="zoomOutBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -158,6 +166,7 @@
                 ToolTipService.InitialShowDelay="1000"
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
+                Cursor="Hand"
                 Click="settingsBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -175,6 +184,7 @@
                 ToolTipService.InitialShowDelay="1000"
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
+                Cursor="Hand"
                 Click="infoBtn_Click">
                 <Path
                     Fill="#FFF5F5F5"
@@ -205,7 +215,8 @@
                 FontFamily="Segoe UI Semibold"
                 FontSize="18"
                 Text="OPEN"
-                Click="openBtn_Click"/>
+                Click="openBtn_Click"
+                Cursor="Hand"/>
         </Grid>
         <Label
             x:Name="infoLbl"

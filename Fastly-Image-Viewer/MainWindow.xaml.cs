@@ -83,7 +83,7 @@ namespace Fastly_Image_Viewer
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO: hide window to tray
         }
 
         private void colorPickerBtn_Click(object sender, RoutedEventArgs e)
@@ -93,22 +93,22 @@ namespace Fastly_Image_Viewer
 
         private void zoomInBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO: zoom in algorithm
         }
 
         private void zoomReloadBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO: zoom reload algorithm
         }
 
         private void zoomOutBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO: zoom out algorithm
         }
 
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            // TODO: open settings window
         }
 
         private void infoBtn_Click(object sender, RoutedEventArgs e)

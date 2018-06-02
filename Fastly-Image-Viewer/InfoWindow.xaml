@@ -22,7 +22,9 @@
             Width="40" Height="40"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Margin="30" Click="closeBtn_Click">
+            Margin="30"
+            Cursor="Hand"
+            Click="closeBtn_Click">
             <Path
                 Fill="#FFF5F5F5"
                 Width="16" Height="16"
@@ -87,7 +89,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Margin="30"
-            Text="Github" 
+            Text="Github"
+            Cursor="Hand"
             Click="githubLbl_Click"/>
     </Grid>
 </Window>
