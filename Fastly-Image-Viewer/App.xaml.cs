@@ -17,7 +17,6 @@ namespace Fastly_Image_Viewer
             if (SingleInstance<App>.InitializeAsFirstInstance("Fastly_Image_Viewer"))
             {
                 App app = new App();
-
                 app.InitializeComponent();
                 app.Run();
 

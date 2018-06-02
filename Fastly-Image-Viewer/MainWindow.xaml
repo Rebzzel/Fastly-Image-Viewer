@@ -76,7 +76,7 @@
                 Cursor="Hand"
                 Click="closeBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=closeBtn, Path=Foreground}"
                     Width="16" Height="16"
                     Data="{StaticResource IconClose}"
                     Stretch="Fill"/>
@@ -91,7 +91,7 @@
                 Cursor="Hand"
                 Click="colorPickerBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=colorPickerBtn, Path=Foreground}"
                     Width="16" Height="16"
                     Data="{StaticResource IconColorPicker}"
                     Stretch="Fill"/>
@@ -111,7 +111,7 @@
                 Cursor="Hand"
                 Click="zoomInBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=zoomInBtn, Path=Foreground}"
                     Width="20" Height="20"
                     Data="{StaticResource IconZoomPlus}"
                     Stretch="Fill"/>
@@ -130,7 +130,7 @@
                 Cursor="Hand"
                 Click="zoomReloadBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=zoomReloadBtn, Path=Foreground}"
                     Width="20" Height="20"
                     Data="{StaticResource IconReload}"
                     Stretch="Fill"/>
@@ -150,7 +150,7 @@
                 Cursor="Hand"
                 Click="zoomOutBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=zoomOutBtn, Path=Foreground}"
                     Width="20" Height="20"
                     Data="{StaticResource IconZoomMinus}"
                     Stretch="Fill"/>
@@ -169,7 +169,7 @@
                 Cursor="Hand"
                 Click="settingsBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=settingsBtn, Path=Foreground}"
                     Width="22" Height="22"
                     Data="{StaticResource IconSettings}"
                     Stretch="Fill"/>
@@ -187,7 +187,7 @@
                 Cursor="Hand"
                 Click="infoBtn_Click">
                 <Path
-                    Fill="#FFF5F5F5"
+                    Fill="{Binding ElementName=infoBtn, Path=Foreground}"
                     Width="22" Height="22"
                     Data="{StaticResource IconInfo}"
                     Stretch="Fill"/>
