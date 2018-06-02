@@ -42,6 +42,11 @@ namespace Fastly_Image_Viewer
         private void openBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = 
+                "All supported (*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico;*.tiff;*.wmf)|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico;*.tiff;*.wmf|" +
+                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                "Portable Network Graphic (*.png)|*.png|" +
+                "All files (*.*)|*.*";
 
             if (dialog.ShowDialog().Value)
             {
@@ -75,6 +80,7 @@ namespace Fastly_Image_Viewer
         private void saveAsBtn_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter =
 
             if (dialog.ShowDialog().Value)
             {

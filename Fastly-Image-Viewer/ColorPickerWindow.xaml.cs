@@ -28,7 +28,7 @@ namespace Fastly_Image_Viewer
 
         private void closeLbl_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
         }
     }
 }
