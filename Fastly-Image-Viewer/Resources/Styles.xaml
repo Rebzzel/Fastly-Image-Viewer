@@ -79,6 +79,44 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#FF191919"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#FFF5F5F5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Border>
+                        <Grid
+                            x:Name="visibilityGrid"
+                            Background="#7F000000"
+                            Visibility="Hidden"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="visibilityGrid" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF222222"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#FF272727"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!-- TextBlock Styles -->
     <Style x:Key="LinkTextBlock" TargetType="TextBlock">
         <Style.Triggers>
@@ -86,5 +124,36 @@
                 <Setter Property="TextDecorations" Value="Underline"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+    <!-- Checkbox Style -->
+    <Style x:Key="NativeCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="Background" Value="#BF000000"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="BorderBrush" Value="#BF101010"/>
+        <Setter Property="Padding" Value="28,4,0,5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid>
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Width="24" Height="24"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                            <Path
+                                x:Name="checkIcon"
+                                Fill="#FFFFFFFF"
+                                Width="10" Height="10"
+                                Data="{DynamicResource IconCheck}"
+                                Stretch="Fill"/>
+                        </Border>
+                        <ContentPresenter 
+                            Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

@@ -27,6 +27,7 @@ namespace Fastly_Image_Viewer
         System.Windows.Forms.NotifyIcon TrayIcon;
 
         ColorPickerWindow PickerWindow;
+        SettingsWindow SettingsWindow;
         InfoWindow InfoWindow;
 
         public MainWindow()
@@ -45,6 +46,7 @@ namespace Fastly_Image_Viewer
             this.TrayIcon.Click += TrayIcon_Click;
 
             this.PickerWindow = new ColorPickerWindow();
+            this.SettingsWindow = new SettingsWindow();
             this.InfoWindow = new InfoWindow();
         }
 
@@ -168,7 +170,7 @@ namespace Fastly_Image_Viewer
 
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: open settings window
+            this.SettingsWindow.Show();
         }
 
         private void infoBtn_Click(object sender, RoutedEventArgs e)
