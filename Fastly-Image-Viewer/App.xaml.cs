@@ -26,8 +26,13 @@ namespace Fastly_Image_Viewer
 
         public bool SignalExternalCommandLineArgs(IList<string> args)
         {
+            MainWindow mainWindow = this.MainWindow as MainWindow;
+
+            if (!mainWindow.IsActive)
+                mainWindow.Show();
+
             if (args.Count > 1)
-                (this.MainWindow as MainWindow).OpenImage(args[1]);
+                mainWindow.OpenImage(args[1]);
 
             return true;
         }

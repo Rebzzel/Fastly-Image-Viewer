@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,8 @@ namespace Fastly_Image_Viewer
         public MainWindow()
         {
             InitializeComponent();
+
+            this.ShowInTaskbar = false;
 
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
@@ -83,6 +86,9 @@ namespace Fastly_Image_Viewer
                 "All supported (*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico;*.tiff;*.wmf)|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico;*.tiff;*.wmf|" +
                 "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                 "Portable Network Graphic (*.png)|*.png|" +
+                "Graphics Interchange Format (*.gif)|*.gif|" +
+                "Icon (*.ico)|*.ico|" +
+                "Other (*.tiff;*.wmf)|*.tiff;*.wmf|" +
                 "All files (*.*)|*.*";
 
             if (dialog.ShowDialog().Value)
@@ -92,15 +98,35 @@ namespace Fastly_Image_Viewer
         private void saveAsBtn_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter =
+                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                "Portable Network Graphic (*.png)|*.png|" +
+                "Graphics Interchange Format (*.gif)|*.gif|" +
+                "Icon (*.ico)|*.ico";
 
             if (dialog.ShowDialog().Value)
             {
+                switch (dialog.FilterIndex)
+                {
+                    case 1:
+                        this.Bitmap.Save(dialog.FileName, ImageFormat.Jpeg);
+                        break;
+                    case 2:
+                        this.Bitmap.Save(dialog.FileName, ImageFormat.Png);
+                        break;
+                    case 3:
+                        this.Bitmap.Save(dialog.FileName, ImageFormat.Gif);
+                        break;
+                    case 4:
+                        this.Bitmap.Save(dialog.FileName, ImageFormat.Icon);
+                        break;
+                }
             }
         }
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: hide window to tray
+            this.Hide();
         }
 
         private void colorPickerBtn_Click(object sender, RoutedEventArgs e)
