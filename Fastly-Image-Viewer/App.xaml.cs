@@ -28,11 +28,11 @@ namespace Fastly_Image_Viewer
         {
             MainWindow mainWindow = this.MainWindow as MainWindow;
 
-            if (!mainWindow.IsActive)
-                mainWindow.Show();
-
             if (args.Count > 1)
                 mainWindow.OpenImage(args[1]);
+                
+            if (!mainWindow.IsActive)
+                mainWindow.Show();
 
             return true;
         }

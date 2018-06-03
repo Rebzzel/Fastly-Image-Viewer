@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,8 @@ namespace Fastly_Image_Viewer
     {
         Bitmap Bitmap;
 
+        System.Windows.Forms.NotifyIcon TrayIcon;
+
         ColorPickerWindow PickerWindow;
         InfoWindow InfoWindow;
 
@@ -35,6 +38,11 @@ namespace Fastly_Image_Viewer
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
                 this.OpenImage(args[1]);
+
+            this.TrayIcon = new System.Windows.Forms.NotifyIcon();
+            this.TrayIcon.Icon = Properties.Resources.FIV;
+            this.TrayIcon.Text = "Fastly Image Viewer";
+            this.TrayIcon.Click += TrayIcon_Click;
 
             this.PickerWindow = new ColorPickerWindow();
             this.InfoWindow = new InfoWindow();
@@ -77,6 +85,13 @@ namespace Fastly_Image_Viewer
         {
             this.PickerWindow.Close();
             this.InfoWindow.Close();
+        }
+
+        private void TrayIcon_Click(object sender, EventArgs e)
+        {
+            this.TrayIcon.Visible = false;
+
+            this.Show();
         }
 
         private void openBtn_Click(object sender, RoutedEventArgs e)
@@ -126,6 +141,8 @@ namespace Fastly_Image_Viewer
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
+            this.TrayIcon.Visible = true;
+
             this.Hide();
         }
 
