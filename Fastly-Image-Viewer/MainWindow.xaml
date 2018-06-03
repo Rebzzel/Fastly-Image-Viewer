@@ -73,6 +73,10 @@
                 Width="40" Height="40"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top" 
+                ToolTip="Close"
+                ToolTipService.InitialShowDelay="1000"
+                ToolTipService.ShowDuration="2500"
+                ToolTipService.BetweenShowDelay="0"
                 Cursor="Hand"
                 Click="closeBtn_Click">
                 <Path
@@ -88,6 +92,10 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Margin="0,45,0,0"
+                ToolTip="Color picker"
+                ToolTipService.InitialShowDelay="1000"
+                ToolTipService.ShowDuration="2500"
+                ToolTipService.BetweenShowDelay="0"
                 Cursor="Hand"
                 Click="colorPickerBtn_Click">
                 <Path

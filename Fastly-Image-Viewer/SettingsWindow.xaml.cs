@@ -25,5 +25,15 @@ namespace Fastly_Image_Viewer
         {
             this.DragMove();
         }
+
+        private void cancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void applyBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

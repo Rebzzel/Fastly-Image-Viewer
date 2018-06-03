@@ -145,6 +145,15 @@ namespace Fastly_Image_Viewer
         {
             this.TrayIcon.Visible = true;
 
+            if (this.PickerWindow.IsActive)
+                this.PickerWindow.Hide();
+
+            if (this.SettingsWindow.IsActive)
+                this.SettingsWindow.Hide();
+
+            if (this.SettingsWindow.IsActive)
+                this.InfoWindow.Hide();
+
             this.Hide();
         }
 

@@ -9,6 +9,7 @@
         Title="ColorPickerWindow"
         WindowStyle="None"
         Width="300" Height="450"
+        Topmost="True"
         AllowsTransparency="True"
         Background="#7F000000">
     <Grid>
