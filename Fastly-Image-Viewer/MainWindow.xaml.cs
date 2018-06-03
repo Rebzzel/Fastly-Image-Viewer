@@ -86,6 +86,7 @@ namespace Fastly_Image_Viewer
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             this.PickerWindow.Close();
+            this.SettingsWindow.Close();
             this.InfoWindow.Close();
         }
 
