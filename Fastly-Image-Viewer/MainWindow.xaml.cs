@@ -23,6 +23,7 @@ namespace Fastly_Image_Viewer
     public partial class MainWindow : Window
     {
         Bitmap Bitmap;
+        BitmapImage Image;
 
         System.Windows.Forms.NotifyIcon TrayIcon;
 
@@ -62,15 +63,28 @@ namespace Fastly_Image_Viewer
             this.Bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
             stream.Position = 0;
 
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.BeginInit();
-            bitmapImage.StreamSource = stream;
-            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-            bitmapImage.EndInit();
+            this.Image = new BitmapImage();
+            this.Image.BeginInit();
+            this.Image.StreamSource = stream;
+            this.Image.CacheOption = BitmapCacheOption.OnLoad;
+            this.Image.EndInit();
 
-            this.image.Width = bitmapImage.Width;
-            this.image.Height = bitmapImage.Height;
-            this.image.Source = bitmapImage;
+            double width = this.Image.Width;
+            double height = this.Image.Height;
+
+            while (width > SystemParameters.PrimaryScreenWidth * 80 / 100)
+            {
+                width = width * 80 / 100;
+            }
+
+            while (height > SystemParameters.PrimaryScreenHeight * 80 / 100)
+            {
+                height = height * 80 / 100;
+            }
+
+            this.image.Width = width;
+            this.image.Height = height;
+            this.image.Source = this.Image;
 
             FileInfo fileInfo = new FileInfo(path);
 
@@ -165,17 +179,65 @@ namespace Fastly_Image_Viewer
 
         private void zoomInBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: zoom in algorithm
+            double width = Bitmap.Width;
+            double height = Bitmap.Height;
+
+            while (width > SystemParameters.PrimaryScreenWidth * 80 / 100)
+            {
+                width = width * 80 / 100;
+            }
+
+            while (height > SystemParameters.PrimaryScreenHeight * 80 / 100)
+            {
+                height = height * 80 / 100;
+            }
+
+            if (image.Width > (SystemParameters.PrimaryScreenWidth * 80 / 100) || image.Height > (SystemParameters.PrimaryScreenHeight * 80 / 100))
+                return;
+
+            image.Width += width * 5 / 100;
+            image.Height += height * 5 / 100;
         }
 
         private void zoomReloadBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: zoom reload algorithm
+            double width = this.Image.Width;
+            double height = this.Image.Height;
+
+            while (width > SystemParameters.PrimaryScreenWidth * 80 / 100)
+            {
+                width = width * 80 / 100;
+            }
+
+            while (height > SystemParameters.PrimaryScreenHeight * 80 / 100)
+            {
+                height = height * 80 / 100;
+            }
+
+            image.Width = width;
+            image.Height = height;
         }
 
         private void zoomOutBtn_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: zoom out algorithm
+            double width = Bitmap.Width;
+            double height = Bitmap.Height;
+
+            while (width > SystemParameters.PrimaryScreenWidth * 80 / 100)
+            {
+                width = width * 80 / 100;
+            }
+
+            while (height > SystemParameters.PrimaryScreenHeight * 80 / 100)
+            {
+                height = height * 80 / 100;
+            }
+
+            if (image.Width - width * 5 / 100 <= 0 || image.Height - height * 5 / 10 <= 0)
+                return;
+
+            image.Width -= width * 5 / 100;
+            image.Height -= height * 5 / 100;
         }
 
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
