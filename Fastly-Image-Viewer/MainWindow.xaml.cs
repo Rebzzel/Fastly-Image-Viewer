@@ -35,6 +35,19 @@ namespace Fastly_Image_Viewer
         {
             InitializeComponent();
 
+            if (Properties.Settings.Default.IsFirstRun)
+            {
+                if (MessageBox.Show("Add to autorun?", "Fastly Image Viewer | First Run", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    RegistryKey key = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                    key.SetValue("FastlyImageViewer", Assembly.GetEntryAssembly().Location);
+                    key.Close();
+                }
+
+                Properties.Settings.Default.IsFirstRun = false;
+                Properties.Settings.Default.Save();
+            }
+
             this.ShowInTaskbar = false;
 
             string[] args = Environment.GetCommandLineArgs();
@@ -169,7 +182,16 @@ namespace Fastly_Image_Viewer
             if (this.SettingsWindow.IsActive)
                 this.InfoWindow.Hide();
 
-            this.Hide();
+            switch (Properties.Settings.Default.CloseType)
+            {
+                case 0:
+                    this.Hide();
+                    break;
+                case 1:
+                    Environment.Exit(0);
+                    break;
+            }
+            
         }
 
         private void colorPickerBtn_Click(object sender, RoutedEventArgs e)

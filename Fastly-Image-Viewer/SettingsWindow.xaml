@@ -32,6 +32,47 @@
             FontSize="10"
             Content="Settings" 
             MouseDown="titleLbl_MouseDown"/>
+        <CheckBox
+            x:Name="autoRunCheckBox"
+            Style="{StaticResource NativeCheckBoxStyle}"
+            Foreground="Gray"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="30, 54"
+            FontSize="10"
+            Content="Autorun with Windows" Checked="autoRunCheckBox_Checked"/>
+        <Grid
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="30, 80">
+            <Label
+                Foreground="#FFF5F5F5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="0,0,-0.001,0"
+                FontSize="11"
+                Content="What to do when press the close button?"/>
+            <RadioButton
+                x:Name="radio1"
+                Style="{StaticResource NativeRadioButtonStyle}"
+                Foreground="Gray"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="5,26,0,0"
+                FontSize="10"
+                Content="Hide to tray" 
+                Checked="radio1_Checked"/>
+            <RadioButton
+                x:Name="radio2"
+                Style="{StaticResource NativeRadioButtonStyle}"
+                Foreground="Gray"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="105,26,0,0"
+                FontSize="10"
+                Content="Close" 
+                Checked="radio2_Checked"/>
+        </Grid>
         <Button
             x:Name="cancelBtn"
             Style="{StaticResource ButtonStyle}"
