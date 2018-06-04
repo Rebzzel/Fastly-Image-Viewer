@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">1.00</Value>
     </Setting>
     <Setting Name="CloseType" Type="System.Byte" Scope="User">
       <Value Profile="(Default)">0</Value>

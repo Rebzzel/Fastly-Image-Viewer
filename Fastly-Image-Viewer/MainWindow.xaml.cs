@@ -48,8 +48,6 @@ namespace Fastly_Image_Viewer
                 Properties.Settings.Default.Save();
             }
 
-            this.ShowInTaskbar = false;
-
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
                 this.OpenImage(args[1]);
@@ -112,6 +110,8 @@ namespace Fastly_Image_Viewer
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            this.ShowInTaskbar = false;
+
             this.PickerWindow.Close();
             this.SettingsWindow.Close();
             this.InfoWindow.Close();
@@ -120,7 +120,7 @@ namespace Fastly_Image_Viewer
         private void TrayIcon_Click(object sender, EventArgs e)
         {
             this.TrayIcon.Visible = false;
-
+            this.ShowInTaskbar = true;
             this.Show();
         }
 

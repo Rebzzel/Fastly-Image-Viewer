@@ -19,6 +19,8 @@ namespace Fastly_Image_Viewer
         public InfoWindow()
         {
             InitializeComponent();
+
+            this.versionLbl.Content = $"{Properties.Settings.Default.Version}";
         }
 
         private void closeBtn_Click(object sender, RoutedEventArgs e)
