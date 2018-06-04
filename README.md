@@ -20,3 +20,6 @@ You can compile from source or install from [releases](https://github.com/Rebzze
 
 ## Contributors
 [Rebzzel](https://github.com/Rebzzel)
+
+## Donate
+You can support project by donate on [Patreon](https://www.patreon.com/rebzzel).
