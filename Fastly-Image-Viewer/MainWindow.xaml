@@ -97,6 +97,7 @@
                 ToolTipService.ShowDuration="2500"
                 ToolTipService.BetweenShowDelay="0"
                 Cursor="Hand"
+                IsEnabled="False"
                 Click="colorPickerBtn_Click">
                 <Path
                     Fill="{Binding ElementName=colorPickerBtn, Path=Foreground}"
