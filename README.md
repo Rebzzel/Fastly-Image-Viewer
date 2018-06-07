@@ -11,7 +11,7 @@ Fast and Simple open source image viewer written on C# under the [GNU General Pu
 - [x] Zoom algorithms
 - [x] Installer (using [inno setup](https://github.com/jrsoftware/issrc))
 - [ ] Support Gifs
-- [ ] Drag and drop 
+- [x] Drag and drop 
 - [ ] Copy/Paste image from clipboard
 - [x] Scroll zoom control
 

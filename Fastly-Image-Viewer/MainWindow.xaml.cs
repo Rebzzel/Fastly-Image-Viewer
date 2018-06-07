@@ -84,6 +84,15 @@ namespace Fastly_Image_Viewer
             Show();
         }
 
+        private void Window_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                OpenImage(files[0]);
+            }
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ShowInTaskbar = false;
