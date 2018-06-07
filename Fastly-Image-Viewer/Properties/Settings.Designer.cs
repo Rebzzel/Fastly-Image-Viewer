@@ -25,25 +25,13 @@ namespace Fastly_Image_Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1.00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.10")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
             }
             set {
                 this["Version"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public byte CloseType {
-            get {
-                return ((byte)(this["CloseType"]));
-            }
-            set {
-                this["CloseType"] = value;
             }
         }
         

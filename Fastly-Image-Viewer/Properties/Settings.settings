@@ -3,10 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1.00</Value>
-    </Setting>
-    <Setting Name="CloseType" Type="System.Byte" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">1.10</Value>
     </Setting>
     <Setting Name="IsFirstRun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

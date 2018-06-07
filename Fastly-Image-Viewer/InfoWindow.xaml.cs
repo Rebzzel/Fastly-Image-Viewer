@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Fastly_Image_Viewer
 {
@@ -20,17 +8,10 @@ namespace Fastly_Image_Viewer
         {
             InitializeComponent();
 
-            this.versionLbl.Content = $"{Properties.Settings.Default.Version}";
-        }
+            versionLbl.Content = $"{Properties.Settings.Default.Version}";
 
-        private void closeBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void githubLbl_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/Rebzzel/Fastly-Image-Viewer");
+            closeBtn.Click += (s, e) => Hide();
+            githubLbl.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/Rebzzel/Fastly-Image-Viewer");
         }
     }
 }

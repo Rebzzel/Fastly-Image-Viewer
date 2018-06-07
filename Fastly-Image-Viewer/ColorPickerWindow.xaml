@@ -30,16 +30,14 @@
             VerticalAlignment="Top"
             Padding="10, 5"
             FontSize="10"
-            Content="Color Picker" 
-            MouseDown="titleLbl_MouseDown"/>
+            Content="Color Picker" />
         <c:ClickableLabel
             x:Name="closeLbl"
             Width="28" Height="24"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Padding="8,10,5,5"
-            Cursor="Hand"
-            Click="closeLbl_Click">
+            Cursor="Hand">
             <Path
                 Fill="Gray"
                 Width="12" Height="2"
