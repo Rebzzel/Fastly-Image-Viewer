@@ -25,7 +25,7 @@ namespace Fastly_Image_Viewer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1.11")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.04")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
