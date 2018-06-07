@@ -13,7 +13,7 @@ Fast and Simple open source image viewer written on C# under the [GNU General Pu
 - [ ] Support Gifs
 - [ ] Drag and drop 
 - [ ] Copy/Paste image from clipboard
-- [ ] Scroll zoom control
+- [x] Scroll zoom control
 
 ## How to Install?
 You can compile from source or install from [releases](https://github.com/Rebzzel/Fastly-Image-Viewer/releases) when available.
